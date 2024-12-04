@@ -10,15 +10,16 @@ async function init () {
   console.log(data)
   
   const conteneur = document.querySelector('.main-content')
-  const liste = conteneur.firstElementChild //On récupère l'élément UL
+
   const fragment = document.createDocumentFragment() //je crée un fragment pour stocker les li
 
   data.forEach(item => {
     const { id, nom, prenom, poste, niveauHierarchique, photo, dateNaissance } =
       item
-    const element = document.createElement('li') //On crée l'élément li
+    const element = document.createElement('div') //On crée l'élément div
+    element.classList.add('card')
     element.innerHTML = `
-     <div class="card">
+  
       <header class="card-header">
         ${prenom} ${nom}
       </header>
@@ -32,10 +33,10 @@ async function init () {
         <div class="card-age">${dateNaissance}</div>
         <div class="card-function">${poste}</div>
       </footer>
-    </div>` //on ajoute le contenu data
+    ` 
     fragment.appendChild(element)
   })
-  liste.appendChild(fragment)
+  conteneur.appendChild(fragment)
 }
 
 init()
@@ -54,3 +55,6 @@ init()
 
 //Etape 2 : à la place de textContact inner HTML
 //mapper les variables
+
+//Etape 3 : enlever les ul et écrire le css
+//
