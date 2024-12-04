@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+html {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.main-header,
+.main-footer,
+.main-content  {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.main-content {
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.main-header {
+  background-color: aquamarine;
+  font-weight: 800;
+}
+
+.main-content {
+  background-color: coral;
+}
+
+.main-footer {
+  background-color: darkslateblue;
+}
+
+/* Card */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  /* box-shadow: inset rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
+}
+
+.card-header {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 0;
+}
