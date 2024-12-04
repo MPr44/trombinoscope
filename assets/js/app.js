@@ -1,4 +1,4 @@
-const DATA_PATH = '/trombinoscope/assets/data/trombinoscope_data_french.json'
+const DATA_PATH = '/assets/data/trombinoscope_data_french.json'
 
 /**
  * Initialisation des données
