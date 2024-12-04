@@ -6,7 +6,7 @@
         "poste": "Chef de Projet",
         "niveauHierarchique": "N-1",
         "lienHierarchique": null,
-        "photo": "./assets/images/personnes/photo_1.webp",
+        "photo": "/assets/images/photo_1.webp",
         "dateNaissance": "1986-02-16"
     },
     {
@@ -16,7 +16,7 @@
         "poste": "Manager",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 1,
-        "photo": "./assets/images/personnes/photo_2.webp",
+        "photo": "/assets/images/photo_2.webp",
         "dateNaissance": "1969-05-12"
     },
     {
@@ -26,7 +26,7 @@
         "poste": "Analyste Financier",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 2,
-        "photo": "./assets/images/personnes/photo_3.webp",
+        "photo": "/assets/images/photo_3.webp",
         "dateNaissance": "1974-08-14"
     },
     {
@@ -36,7 +36,7 @@
         "poste": "PDG",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 3,
-        "photo": "./assets/images/personnes/photo_4.webp",
+        "photo": "/assets/images/photo_4.webp",
         "dateNaissance": "1966-01-21"
     },
     {
@@ -46,7 +46,7 @@
         "poste": "Chef de Projet",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 4,
-        "photo": "./assets/images/personnes/photo_5.webp",
+        "photo": "/assets/images/photo_5.webp",
         "dateNaissance": "1995-09-15"
     },
     {
@@ -56,7 +56,7 @@
         "poste": "Assistant Administratif",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 5,
-        "photo": "./assets/images/personnes/photo_6.webp",
+        "photo": "/assets/images/photo_6.webp",
         "dateNaissance": "1994-08-01"
     },
     {
@@ -66,7 +66,7 @@
         "poste": "PDG",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 6,
-        "photo": "./assets/images/personnes/photo_7.webp",
+        "photo": "/assets/images/photo_7.webp",
         "dateNaissance": "1980-07-09"
     },
     {
@@ -76,7 +76,7 @@
         "poste": "Chef de Projet",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 7,
-        "photo": "./assets/images/personnes/photo_8.webp",
+        "photo": "/assets/images/photo_8.webp",
         "dateNaissance": "1964-09-09"
     },
     {
@@ -86,7 +86,7 @@
         "poste": "Assistant Administratif",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 8,
-        "photo": "./assets/images/personnes/photo_9.webp",
+        "photo": "/assets/images/photo_9.webp",
         "dateNaissance": "1993-08-29"
     },
     {
@@ -96,7 +96,7 @@
         "poste": "Assistant Administratif",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 9,
-        "photo": "./assets/images/personnes/photo_10.webp",
+        "photo": "/assets/images/photo_10.webp",
         "dateNaissance": "1986-09-24"
     },
     {
@@ -106,7 +106,7 @@
         "poste": "Ouvrier Polyvalent",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 10,
-        "photo": "./assets/images/personnes/photo_11.webp",
+        "photo": "/assets/images/photo_11.webp",
         "dateNaissance": "1995-02-09"
     },
     {
@@ -116,7 +116,7 @@
         "poste": "Assistant Administratif",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 11,
-        "photo": "./assets/images/personnes/photo_12.webp",
+        "photo": "/assets/images/photo_12.webp",
         "dateNaissance": "1971-06-07"
     },
     {
@@ -126,7 +126,7 @@
         "poste": "Responsable Commercial",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 12,
-        "photo": "./assets/images/personnes/photo_1.webp",
+        "photo": "/assets/images/photo_1.webp",
         "dateNaissance": "1969-02-14"
     },
     {
@@ -136,7 +136,7 @@
         "poste": "Analyste Financier",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 13,
-        "photo": "./assets/images/personnes/photo_2.webp",
+        "photo": "/assets/images/photo_2.webp",
         "dateNaissance": "1982-03-06"
     },
     {
@@ -146,7 +146,7 @@
         "poste": "Analyste Financier",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 14,
-        "photo": "./assets/images/personnes/photo_3.webp",
+        "photo": "/assets/images/photo_3.webp",
         "dateNaissance": "1999-06-25"
     },
     {
@@ -156,7 +156,7 @@
         "poste": "Ouvrier Polyvalent",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 15,
-        "photo": "./assets/images/personnes/photo_4.webp",
+        "photo": "/assets/images/photo_4.webp",
         "dateNaissance": "1964-06-18"
     },
     {
@@ -166,7 +166,7 @@
         "poste": "Technicien",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 16,
-        "photo": "./assets/images/personnes/photo_5.webp",
+        "photo": "/assets/images/photo_5.webp",
         "dateNaissance": "1978-11-04"
     },
     {
@@ -176,7 +176,7 @@
         "poste": "Technicien",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 17,
-        "photo": "./assets/images/personnes/photo_6.webp",
+        "photo": "/assets/images/photo_6.webp",
         "dateNaissance": "1966-03-28"
     },
     {
@@ -186,7 +186,7 @@
         "poste": "Technicien",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 18,
-        "photo": "./assets/images/personnes/photo_7.webp",
+        "photo": "/assets/images/photo_7.webp",
         "dateNaissance": "1988-12-31"
     },
     {
@@ -196,7 +196,7 @@
         "poste": "Assistant Administratif",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 19,
-        "photo": "./assets/images/personnes/photo_8.webp",
+        "photo": "/assets/images/photo_8.webp",
         "dateNaissance": "1995-01-10"
     },
     {
@@ -206,7 +206,7 @@
         "poste": "Responsable Commercial",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 20,
-        "photo": "./assets/images/personnes/photo_9.webp",
+        "photo": "/assets/images/photo_9.webp",
         "dateNaissance": "1986-04-29"
     },
     {
@@ -216,7 +216,7 @@
         "poste": "Responsable Commercial",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 21,
-        "photo": "./assets/images/personnes/photo_10.webp",
+        "photo": "/assets/images/photo_10.webp",
         "dateNaissance": "1981-08-07"
     },
     {
@@ -226,7 +226,7 @@
         "poste": "Chargé de Communication",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 22,
-        "photo": "./assets/images/personnes/photo_11.webp",
+        "photo": "/assets/images/photo_11.webp",
         "dateNaissance": "1967-01-24"
     },
     {
@@ -236,7 +236,7 @@
         "poste": "Responsable Commercial",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 23,
-        "photo": "./assets/images/personnes/photo_12.webp",
+        "photo": "/assets/images/photo_12.webp",
         "dateNaissance": "1964-07-13"
     },
     {
@@ -246,7 +246,7 @@
         "poste": "PDG",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 24,
-        "photo": "./assets/images/personnes/photo_1.webp",
+        "photo": "/assets/images/photo_1.webp",
         "dateNaissance": "1980-04-05"
     },
     {
@@ -256,7 +256,7 @@
         "poste": "Directrice Administrative",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 25,
-        "photo": "./assets/images/personnes/photo_2.webp",
+        "photo": "/assets/images/photo_2.webp",
         "dateNaissance": "1969-12-13"
     },
     {
@@ -266,7 +266,7 @@
         "poste": "PDG",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 26,
-        "photo": "./assets/images/personnes/photo_3.webp",
+        "photo": "/assets/images/photo_3.webp",
         "dateNaissance": "1996-05-31"
     },
     {
@@ -276,7 +276,7 @@
         "poste": "Directrice Administrative",
         "niveauHierarchique": "N-1",
         "lienHierarchique": 27,
-        "photo": "./assets/images/personnes/photo_4.webp",
+        "photo": "/assets/images/photo_4.webp",
         "dateNaissance": "1985-05-24"
     },
     {
@@ -286,7 +286,7 @@
         "poste": "Chargé de Communication",
         "niveauHierarchique": "N-2",
         "lienHierarchique": 28,
-        "photo": "./assets/images/personnes/photo_5.webp",
+        "photo": "/assets/images/photo_5.webp",
         "dateNaissance": "1994-09-10"
     },
     {
@@ -296,7 +296,7 @@
         "poste": "Analyste Financier",
         "niveauHierarchique": "N-0",
         "lienHierarchique": 29,
-        "photo": "./assets/images/personnes/photo_6.webp",
+        "photo": "/assets/images/photo_6.webp",
         "dateNaissance": "1987-09-08"
     }
 ]
