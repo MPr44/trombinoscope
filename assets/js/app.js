@@ -8,27 +8,19 @@ async function init () {
   const response = await fetch(DATA_PATH)
   const data = await response.json()
   console.log(data)
-  const items=[
-    'id',
-    'nom',
-    'prenom',
-    'poste',
-    'niveauHierarchique',
-    'lienHierarchique',
-    'photo',
-    'dateNaissance'
-]
-const conteneur = document.querySelector('.main-content')
-const liste = conteneur.firstElementChild //On récupère l'élément UL
-const fragment = document.createDocumentFragment()//je crée un fragment pour stocker les li
+  
+  const conteneur = document.querySelector('.main-content')
+  const liste = conteneur.firstElementChild //On récupère l'élément UL
+  const fragment = document.createDocumentFragment() //je crée un fragment pour stocker les li
 
-data.forEach(item=>{
-  const{id, nom, prenom, poste, niveauHierarchique, photo, dateNaissance} = item;
-  const element = document.createElement('li')//On crée l'élément li
-  element.textContent=`${nom} ${prenom} ${poste} ${niveauHierarchique} ${photo} ${dateNaissance}` //on ajoute le contenu data
-  fragment.appendChild(element)
-})
-liste.appendChild(fragment)
+  data.forEach(item => {
+    const { id, nom, prenom, poste, niveauHierarchique, photo, dateNaissance } =
+      item
+    const element = document.createElement('li') //On crée l'élément li
+    element.textContent = `${nom} ${prenom} ${poste} ${niveauHierarchique} ${photo} ${dateNaissance}` //on ajoute le contenu data
+    fragment.appendChild(element)
+  })
+  liste.appendChild(fragment)
 }
 
 init()
