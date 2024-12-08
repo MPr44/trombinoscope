@@ -11,15 +11,15 @@ async function init () {
   
   const conteneur = document.querySelector('.main-content')
 
-  const fragment = document.createDocumentFragment() //je crée un fragment pour stocker les li
+  const fragment = document.createDocumentFragment() //je crée un fragment pour stocker les div
 
   data.forEach(item => {
     const { id, nom, prenom, poste, niveauHierarchique, photo, dateNaissance } =
       item
     const element = document.createElement('div') //On crée l'élément div
-    element.classList.add('card')
-    element.innerHTML = `
-  
+    element.classList.add('card') //on ajoute une class card 
+    element.innerHTML = //on ajoute le code html suivant
+    `
       <header class="card-header">
         ${prenom} ${nom}
       </header>
