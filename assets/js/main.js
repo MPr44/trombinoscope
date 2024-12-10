@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${node.data.photo}" alt="${node.data.prenom} ${node.data.nom}" />
             <h3>${node.data.prenom} ${node.data.nom}</h3>
             <p>${node.data.poste}</p>
-            <p>Date de naissance : ${node.data.dateNaissance}</p>
+            <p>Age : ${getAgeFromBirthdayDate(node.data.dateNaissance).toFixed(0)} ans</p>
           `;
           chartInner.appendChild(div);
         });
