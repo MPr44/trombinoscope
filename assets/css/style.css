@@ -56,7 +56,7 @@ body {
   gap: 10px;
 }
 
-input {
+input, select {
   padding: 5px;
 }
 

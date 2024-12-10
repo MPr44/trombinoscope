@@ -1,5 +1,5 @@
 // URL du fichier JSON contenant les données des employés
-const DATA_URL = '/assets/data/trombinoscope_data_french.json';
+// const DATA_URL = '/assets/data/trombinoscope_data_french.json';
 
 // Paramètres dimensionnels de chaque boîte et espaces entre niveaux
 const nodeWidth = 200;    // Largeur d'une boîte employé
@@ -7,72 +7,92 @@ const nodeHeight = 120;   // Hauteur approximative d'une boîte employé
 const levelSpacing = 100; // Espace vertical entre niveaux hiérarchiques
 const siblingSpacing = 40; // Espace horizontal entre "frères" (employés d'un même niveau sous un même manager)
 
+function init() {
+
+  const main = document.querySelector('main')
+
+  // On supprime l'ancien conteneur s'il existe
+  const oldContainer = document.querySelector('.org-container')
+  if (oldContainer) oldContainer.remove()
+
+  // Création du nouveau conteneur
+  const orgContainer = document.createElement('div')
+  orgContainer.classList.add('org-container')
+
+  const chartInner = document.createElement('div')
+  chartInner.classList.add('chart-inner')
+
+  // Création du SVG avec createElementNS pour s'assurer de l'espace de noms
+  const orgLines = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+  orgLines.classList.add('org-lines')
+
+  // On assemble les éléments
+  chartInner.appendChild(orgLines)
+  orgContainer.appendChild(chartInner)
+  main.appendChild(orgContainer)
+
+  // Récupération des données
+  const data = getAllItems()
+  const root = buildHierarchy(data);
+
+  if (root) {
+    // Calcul du layout
+    const {nodes, edges} = computeLayout(root);
+
+    // Insertion des boîtes représentant les employés
+    nodes.forEach(node => {
+      const div = document.createElement('div');
+      div.className = 'org-node';
+      div.style.top = node.y + 'px';
+      div.style.left = node.x + 'px';
+
+      div.innerHTML = `
+        <img src="${node.data.photo}" alt="${node.data.prenom} ${node.data.nom}" />
+        <h3>${node.data.prenom} ${node.data.nom}</h3>
+        <p>${node.data.poste}</p>
+        <p>Age : ${getAgeFromBirthdayDate(node.data.dateNaissance).toFixed(0)} ans</p>
+        <button onclick="removeItem(${node.data.id});init();">🗑️</button>
+      `;
+      chartInner.appendChild(div);
+    });
+
+    // Dessin des lignes dans le SVG
+    edges.forEach(edge => {
+      const path = document.createElementNS('http://www.w3.org/2000/svg','path');
+      path.setAttribute('d', drawLine(edge));
+      path.setAttribute('stroke', '#ccc');
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke-width', '2');
+      orgLines.appendChild(path);
+    });
+
+    // Calcul des dimensions pour englober tout l'organigramme
+    let maxX = 0, maxY = 0;
+    nodes.forEach(node => {
+      const rightX = node.x + nodeWidth;
+      const bottomY = node.y + nodeHeight;
+      if (rightX > maxX) maxX = rightX;
+      if (bottomY > maxY) maxY = bottomY;
+    });
+
+    // Marge pour éviter d'avoir le dessin collé au bord
+    const margin = 100;
+    maxX += margin;
+    maxY += margin;
+
+    // Ajustement de la taille du SVG et du conteneur interne
+    orgLines.setAttribute('width', maxX);
+    orgLines.setAttribute('height', maxY);
+    chartInner.style.width = maxX + 'px';
+    chartInner.style.height = maxY + 'px';
+  }
+}
+
+
 // Au chargement du DOM
 document.addEventListener('DOMContentLoaded', () => {
-  // On charge les données JSON
-  fetch(DATA_URL)
-    .then(response => response.json())
-    .then(data => {
-      // On construit la hiérarchie
-      const root = buildHierarchy(data);
-      if (root) {
-        // On calcule le layout (positions x,y des nœuds)
-        const {nodes, edges} = computeLayout(root);
-
-        // Sélection des éléments du DOM
-        const chartInner = document.querySelector('.chart-inner');
-        const svg = document.querySelector('.org-lines');
-
-        // On crée un div pour chaque employé (chaque nœud)
-        nodes.forEach(node => {
-          const div = document.createElement('div');
-          div.className = 'org-node';
-          // Position absolue selon x et y calculés
-          div.style.top = node.y + 'px';
-          div.style.left = node.x + 'px';
-
-          // Contenu de la boîte employé
-          div.innerHTML = `
-            <img src="${node.data.photo}" alt="${node.data.prenom} ${node.data.nom}" />
-            <h3>${node.data.prenom} ${node.data.nom}</h3>
-            <p>${node.data.poste}</p>
-            <p>Age : ${getAgeFromBirthdayDate(node.data.dateNaissance).toFixed(0)} ans</p>
-          `;
-          chartInner.appendChild(div);
-        });
-
-        // On dessine les lignes entre parents et enfants
-        edges.forEach(edge => {
-          const path = document.createElementNS('http://www.w3.org/2000/svg','path');
-          path.setAttribute('d', drawLine(edge));
-          path.setAttribute('stroke', '#ccc');
-          path.setAttribute('fill', 'none');
-          path.setAttribute('stroke-width', '2');
-          svg.appendChild(path);
-        });
-
-        // Calcul des dimensions nécessaires pour englober tout l'organigramme
-        let maxX = 0, maxY = 0;
-        nodes.forEach(node => {
-          const rightX = node.x + nodeWidth;
-          const bottomY = node.y + nodeHeight;
-          if (rightX > maxX) maxX = rightX;
-          if (bottomY > maxY) maxY = bottomY;
-        });
-
-        // Ajout d'une marge pour éviter que le dessin soit collé au bord
-        const margin = 100;
-        maxX += margin;
-        maxY += margin;
-
-        // On ajuste la taille du SVG et du conteneur interne
-        svg.setAttribute('width', maxX);
-        svg.setAttribute('height', maxY);
-        chartInner.style.width = maxX + 'px';
-        chartInner.style.height = maxY + 'px';
-      }
-    })
-    .catch(err => console.error(err));
+  init()
+  loadSelect()
 });
 
 /**
