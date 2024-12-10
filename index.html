@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./assets/js/app.js"></script>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <title>Trombinoscope</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Organigramme SVG Centré</title>
+  <!-- On importe la feuille de styles -->
+  <link rel="stylesheet" href="./assets/css/style.css"/>
 </head>
 <body>
   <header class="main-header">
-    MON HEADER
+    MON ORGANIGRAMME
   </header>
-  <main class="main-content">
-<!-- Ecrire les contenants pour afficher les variables -->
-  </main>
+
+  <!-- Conteneur principal de l'organigramme -->
+  <div class="org-container">
+    <!-- Conteneur interne afin de centrer l'organigramme -->
+    <div class="chart-inner">
+      <!-- Le SVG pour les lignes, placé en fond -->
+      <svg class="org-lines"></svg>
+      <!-- Les boîtes des employés seront injectées ici via JS -->
+    </div>
+  </div>
+
   <footer class="main-footer">
     MON FOOTER
   </footer>
+
+  <!-- Script principal pour construire et afficher l'organigramme -->
+  <script src="./assets/js/main.js"></script>
 </body>
 </html>

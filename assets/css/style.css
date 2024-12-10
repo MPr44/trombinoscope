@@ -1,94 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
-html {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
+/* On réinitialise le body en supprimant les marges et en définissant une font par défaut */
 body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f2f2f2;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+  flex-direction: column; /* Le header, container, footer s'empilent verticalement */
 }
 
-.main-header,
-.main-footer,
-.main-content  {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-}
-
-.main-header {
-  background-color: aquamarine;
-  font-weight: 800;
-}
-
-.main-content {
-  background-color: coral;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.main-footer {
-  background-color: darkslateblue;
-}
-
-/* Card */
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: whitesmoke;
-  padding: 5px;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  width: 250px;
-  height: 350px;
-  /* box-shadow: inset rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; */
-}
-
-.card-body img{
-  width:100%;
-  height: auto;
-}
-
-.card-header {
-  justify-content: center;
-  align-items: center;
+.main-header, .main-footer {
   text-align: center;
-  padding: 5px 0;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 20px;
 }
 
-.card-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 0;
-  font-size: 0.875em;
-  max-height: 20px;
+/* Le conteneur principal de l'organigramme
+   - flex: 1 => occupe l'espace restant entre le header et le footer
+   - overflow: auto => permet de scroller si l'organigramme est trop grand
+   - text-align: center => permettra de centrer le contenu inline-block interne
+*/
+.org-container {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+  background: #f2f2f2;
+  padding: 40px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-.card-function {
-  text-align: right;
-  justify-content: flex-end;
+/* Le conteneur interne :
+   - display: inline-block => permet le centrage horizontal de tout l'organigramme
+   - position: relative => le SVG et les boîtes seront positionnés à l'intérieur
+   - text-align: left => réinitialise l'alignement du texte interne
+*/
+.chart-inner {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
 }
 
-.card-function,
-.card-age {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: nowrap;
+/* Le SVG des lignes est en position absolute pour couvrir toute la zone de l'organigramme */
+.org-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Styles des boîtes représentant chaque employé */
+.org-node {
+  position: absolute; /* Positionnement absolu dans le conteneur interne */
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px; /* Largeur fixe pour faciliter le positionnement */
+  box-shadow: 0 0 5px #ccc;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Style de la photo de l'employé */
+.org-node img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Style du nom de l'employé */
+.org-node h3 {
+  margin: 5px 0 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style des informations (poste, date de naissance) */
+.org-node p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #666;
 }
