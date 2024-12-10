@@ -18,6 +18,9 @@ async function init () {
       item
     const element = document.createElement('div') //On crée l'élément div
     element.classList.add('card') //on ajoute une class card 
+    const age = new Date().getTime() - new Date(dateNaissance).getTime()
+    const ageEnAnnees = age / 1000 / 60 / 60 / 24 / 30 / 12
+    
     element.innerHTML = //on ajoute le code html suivant
     `
       <header class="card-header">
@@ -30,7 +33,7 @@ async function init () {
         />
       </div>
       <footer class="card-footer">
-        <div class="card-age">${dateNaissance}</div>
+        <div class="card-age">${ageEnAnnees.toFixed(0)} ans</div>
         <div class="card-function">${poste}</div>
       </footer>
     ` 
