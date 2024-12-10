@@ -11,7 +11,42 @@
 <body>
   <header class="main-header">
     MON ORGANIGRAMME
+    <button id="add-button">
+      Ajouter
+    </button>
   </header>
+
+  <div id="overlay" class="overlay hidden"></div>
+
+  <div id="modal" class="modal hidden">
+    <form id="person-form">
+      <div class="form-container">
+        <label for="name">
+          Nom :
+          <input id="lastName" name="lastName" />
+        </label>
+        <label>
+          Prénom :
+          <input id="firstName" name="firstName"/>
+        </label>
+        <label>
+          Poste :
+          <input id="function" name="function" />
+        </label>
+        <label>
+          Lien Hiérarchique :
+          <input id="levelLink" name="levelLink" />
+        </label>
+        <label>
+          Date de naissance :
+          <input type="date" id="birthdayDate" name="birthdayDate" />
+        </label>
+        <button type="submit" id="submit-button">
+          Ajouter l'employé
+        </button>
+      </div>
+    </form>
+  </div>
 
   <!-- Conteneur principal de l'organigramme -->
   <div class="org-container">
@@ -29,5 +64,6 @@
 
   <!-- Script principal pour construire et afficher l'organigramme -->
   <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/form.js"></script>
 </body>
 </html>
